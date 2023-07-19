@@ -8,7 +8,7 @@ For the user, the app is like a game where they can log in and play. When they b
 
 For the administrator, the app allows setting up the posts that the users see and viewing statistics on how well the users of the app have performed in the game. 
 
-The fake profiles and general setup of this type of an experiment is described in more detail and demonstrated in the paper *Are Deep Learning-Generated Social Media Profiles Indistinguishable from Real Profiles?* [[1]](#1). This previous implementation was done with a Qualtrics survey, and the goal of this project is to allow hosting the experiment on a webpage in the future. A demo of what the finished product should look like can be seen [here](https://fox.az1.qualtrics.com/jfe/preview/previewId/003f11c2-4869-4043-875d-b44c1c3f7a3a/SV_3Ldh887mIgZhIy2/BL_0SrKyOwflIH2Fb8?Q_SurveyVersionID=current).
+The fake profiles and general setup of this type of an experiment is described in more detail and demonstrated in the paper *Are Deep Learning-Generated Social Media Profiles Indistinguishable from Real Profiles?* [[1]](#1). This previous implementation was done with a Qualtrics survey, and the goal of this project is to allow hosting the experiment on a webpage in the future. A demo of what the simulated feed looks like can be seen [here](https://drive.google.com/file/d/1HxljYvi2OsAD_e6Pi92Gd-w_Y8eZzWi_/view?usp=share_link).
 
 ### Tentative database tables
 
