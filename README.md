@@ -10,6 +10,16 @@ For the administrator, the app allows setting up the posts that the users see an
 
 The fake profiles and general setup of this type of an experiment is described in more detail and demonstrated in the paper *Are Deep Learning-Generated Social Media Profiles Indistinguishable from Real Profiles?* [[1]](#1). This previous implementation was done with a Qualtrics survey, and the goal of this project is to allow hosting the experiment on a webpage in the future. A demo of what the simulated feed and voting options could look like can be seen [here](https://drive.google.com/file/d/1Thu1EiI0KjJo8-HpJuNy8ZfOKenInpRG/view?usp=share_link).
 
+
+### Main features
+
+* The user can log in and out or create a new profile 
+* After logging in the user sees the main menu where the options are to play the game or log out
+* When choosign to play the game, the app takes the user to a new page which consists of a simulated social media feed with 4 visible posts. Each post contains text as well as the name and profile picture of the profile that posted it. The user can mark each profile as a human or a bot. 
+* After completing the task the user sees how many profiles they labeled accurately and then can play again or go to the main menu.
+* The administrator can add or remove profiles to the experiment
+* The administrator can view statistics on how well the users have performed
+
 ### Tentative database tables
 
 * users (contains credentials for users and admins)
