@@ -4,11 +4,11 @@
 
 The purpose of this app is two-fold. First, it works as a game that demonstrate how difficult it is to detect bot profiles on a social media feed. Second, it allows running experiments and collecting data on how well people playing the game can distinguish real and fake profiles. 
 
-For the user, the app is like a game where they can log in and play. When they begin to play, they are presented a simulated social media feed (e.g. like on Twitter), with multiple posts visible at once. These posts and information on the profiles posting these will be drawn randomly from a large sample of genuine and fake ones. Thus each game will be unique and each user will see a different instance of the simulated social media feed. The user can then vote for each of these posts if they believe it is written by a bot or a real human. Once they are done labeling each post, they then in the end see how many accounts they labeled correctly and what a typical score is.
+For the user, the app is like a game where they can log in and play. When they begin to play, they are presented a simulated social media feed (e.g. like on Twitter), with multiple posts visible at once. These posts will be drawn randomly from a large sample of genuine and fake ones. Thus each game will be unique and each user will see a different instance of the simulated social media feed. The user can then vote for each of these posts if they believe it is written by a bot or a real human. Once they are done labeling each post, they then in the end see how many accounts they labeled correctly and what a typical score is.
 
-For the administrator, the app allows setting up the profiles that the users see and viewing statistics on how well the users of the app have performed in the game. 
+For the administrator, the app allows setting up the posts that the users see and viewing statistics on how well the users of the app have performed in the game. 
 
-The fake profiles and general setup of this type of an experiment is described in more detail and demonstrated in the paper *Are Deep Learning-Generated Social Media Profiles Indistinguishable from Real Profiles?* [[1]](#1). This previous implementation was done with a Qualtrics survey, and the goal of this project is to allow hosting the experiment on a webpage in the future. 
+The fake profiles and general setup of this type of an experiment is described in more detail and demonstrated in the paper *Are Deep Learning-Generated Social Media Profiles Indistinguishable from Real Profiles?* [[1]](#1). This previous implementation was done with a Qualtrics survey, and the goal of this project is to allow hosting the experiment on a webpage in the future. A demo of what the finished product should look like can be seen [here](https://fox.az1.qualtrics.com/jfe/preview/previewId/003f11c2-4869-4043-875d-b44c1c3f7a3a/SV_3Ldh887mIgZhIy2/BL_0SrKyOwflIH2Fb8?Q_SurveyVersionID=current).
 
 ### Tentative database tables
 
