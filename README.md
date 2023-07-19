@@ -20,6 +20,8 @@ The fake profiles and general setup of this type of an experiment is described i
 
 The real_posts and fake_posts and fake_profiles are split into three separate tables although technically all could put into one table if adding a column that indicates if the profile is real or fake. I decided to split them into three, so that the real profiles will always stay the same, while the posts and fake profiles can be mixed easily to add variety to each time the game is played.
 
+All profile and post data has already been generated / collected. 
+
 ## Installation and setup
 
 To be added...
