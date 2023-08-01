@@ -1,6 +1,5 @@
 from app import app
-from flask import Flask
-from flask import render_template, redirect, request
+from flask import Flask, render_template, redirect, request, session
 import usertools
 
 @app.route("/")
@@ -51,4 +50,5 @@ def experiment():
 @app.route("/logout")
 def logout():
     del session["email"]
+    del session["user_id"]
     return redirect("/")

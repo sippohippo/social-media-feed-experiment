@@ -12,10 +12,10 @@ def login(email, password):
 	if email_exists(email):
 		if check_password_hash(user.password, password):
 			session["user_id"] = user[0]
+			session["email"] = email
 			return True
 		return False		
 	return False
-
 
 
 def newuser(email, password):
