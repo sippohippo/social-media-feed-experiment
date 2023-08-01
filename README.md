@@ -1,5 +1,14 @@
 # Social Media Feed Experiment Web App
 
+## Status report (Välipalautus 2)
+
+
+
+## Installation and setup
+
+To be added...
+
+
 ## Project description
 
 The purpose of this app is two-fold. First, it works as a game that demonstrates how difficult it is to detect bot profiles on a social media feed. Second, it allows running experiments and collecting data on how well people playing the game can distinguish real and fake profiles. 
@@ -32,9 +41,6 @@ The real_posts and fake_posts and fake_profiles are split into three separate ta
 
 All profile and post data has already been generated / collected already. 
 
-## Installation and setup
-
-To be added...
 
 ## References
 <a id="1">[1]</a> 
