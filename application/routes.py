@@ -1,10 +1,10 @@
 from flask import Flask, render_template, redirect, request, session, make_response
-import usertools
+import usertools, experimenttools
 from app import app
 
 # move these later
-from database import db
-from sqlalchemy.sql import text
+#from database import db
+#from sqlalchemy.sql import text
 
 
 @app.route("/")
@@ -46,16 +46,18 @@ def admin():
 
 @app.route("/experiment")
 def experiment():
+	profiles = experimenttools.select_real_posts(2)
+	print(profiles)
+	return render_template("experiment.html", profiles=profiles)
 
     # REMOVE later, testing only
-    sql = text("SELECT data FROM images WHERE id=1")
-    result = db.session.execute(sql, {"id":id})
-    data = result.fetchone()[0]
-    response = make_response(bytes(data))
-    response.headers.set("Content-Type", "image/jpeg")
-    return response
+    # sql = text("SELECT data FROM images WHERE id=1")
+    # result = db.session.execute(sql, {"id":id})
+    # data = result.fetchone()[0]
+    # response = make_response(bytes(data))
+    # response.headers.set("Content-Type", "image/jpeg")
+    # return response
 #    return "Page 3"
-
 
 @app.route("/logout")
 def logout():
