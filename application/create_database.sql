@@ -34,7 +34,7 @@ profilePicId INT REFERENCES images(id)
 );
 
 /* inserting test user */
-insert into users values (10, 'test@test.fi', 'test', FALSE, FALSE);
+insert into users values (1, 'test@test.fi', 'test', FALSE, FALSE);
 
 /* inserting test images */
 insert into images values (1, 'img1', TRUE, pg_read_binary_file('/Users/sippo/social-media-feed-experiment/test_images/Fake1.jpg')::bytea);
