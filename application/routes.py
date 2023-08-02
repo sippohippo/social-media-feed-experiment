@@ -46,7 +46,7 @@ def admin():
 
 @app.route("/experiment")
 def experiment():
-	profiles = experimenttools.select_real_posts(2)
+	profiles = experimenttools.select_posts(3)
 	print(profiles)
 	return render_template("experiment.html", profiles=profiles)
 
