@@ -23,8 +23,9 @@ def newuser(email, password):
     if email_exists(email):
         return False
 
-    query = text("""INSERT INTO users (email,password,admin,acceptTerms)
-    VALUES (:email,:password,FALSE,FALSE)""")
+    query = text("""
+    	INSERT INTO users (email,password,admin,acceptTerms)
+        VALUES (:email,:password,FALSE,FALSE)""")
     db.session.execute(query, {"email":email, "password":hashed_password})
     db.session.commit()
     return login(email, password)
