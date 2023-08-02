@@ -2,7 +2,12 @@
 
 ## Status report (Välipalautus 2)
 
+* Add something
 
+
+### Note on data and GDPR compliance
+
+The three "real" test profiles in the test data of this public Github repository do not contain genuine names or post content, although the profile pictures are from genuine verified Twitter users. All data in this repository is purely for testing that the app works.
 
 ## Installation and setup
 
@@ -24,7 +29,7 @@ The fake profiles and general setup of this type of an experiment is described i
 
 * The user can log in and out or create a new profile 
 * After logging in the user sees the main menu where the options are to play the game or log out
-* When choosing to play the game, the app takes the user to a new page which consists of a simulated social media feed with 4 visible posts. Each post contains text as well as the name and profile picture of the profile that posted it. The user can mark each profile as a human or a bot. 
+* When choosing to play the game, the app takes the user to a new page which consists of a simulated social media feed with 3 visible posts. Each post contains text as well as the name and profile picture of the profile that posted it. The user can mark each profile as a human or a bot. 
 * After completing the task the user sees how many profiles they labeled accurately and then can play again or go to the main menu.
 * The administrator can add or remove profiles to the experiment
 * The administrator can view statistics on how well the users have performed
@@ -34,8 +39,9 @@ The fake profiles and general setup of this type of an experiment is described i
 * users (contains credentials for users and admins)
 * real_posts (contains the real posts and profile information of the creator of the post. The data has been collected earlier via the Twitter API)
 * fake_posts (the generated texts used to populate a post, generated using GPT-3)
-* fake_profiles (the profile information of fake profiles generated with a basic python script and profile images created with StyleGAN)
+* fake_profiles (the profile information of fake profiles generated with a basic python script)
 * results (each row contains the results of a game played by the participant)
+* images (profile images created with StyleGAN as well as real profile images)
 
 The real_posts and fake_posts and fake_profiles are split into three separate tables although technically all could be put into one table if adding a column that indicates if the profile is real or fake. I decided to split them into three, so that the real profiles will always stay the same, while the posts and fake profiles can be mixed easily to add variety to each time the game is played.
 
