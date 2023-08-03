@@ -1,10 +1,7 @@
 from flask import Flask, render_template, redirect, request, session, make_response
-import usertools, experimenttools
+import usertools
+import experimenttools
 from app import app
-
-# move these later
-#from database import db
-#from sqlalchemy.sql import text
 
 
 @app.route("/")
@@ -23,7 +20,7 @@ def login():
 
         if usertools.login(email, password):
             return redirect("/")
-        return render_template("invalid.html")
+        return render_template("invalid.html", message="Invalid username or password!")
 
 
 @app.route("/newuser",methods=["GET", "POST"])
@@ -36,7 +33,8 @@ def newuser():
         password = request.form["password"]
         if usertools.newuser(email, password):
             return redirect("/")
-        return render_template("invalid.html")
+        return render_template("invalid.html",
+                message="An account associated with this email already exists!")
 
 
 @app.route("/admin")
@@ -46,18 +44,10 @@ def admin():
 
 @app.route("/experiment")
 def experiment():
-	profiles = experimenttools.select_posts(3)
-	print(profiles)
-	return render_template("experiment.html", profiles=profiles)
+    profiles = experimenttools.select_posts(3)
+    print(profiles)
+    return render_template("experiment.html", profiles=profiles)
 
-    # REMOVE later, testing only
-    # sql = text("SELECT data FROM images WHERE id=1")
-    # result = db.session.execute(sql, {"id":id})
-    # data = result.fetchone()[0]
-    # response = make_response(bytes(data))
-    # response.headers.set("Content-Type", "image/jpeg")
-    # return response
-#    return "Page 3"
 
 @app.route("/logout")
 def logout():
