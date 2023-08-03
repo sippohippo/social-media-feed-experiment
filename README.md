@@ -26,7 +26,7 @@ cd social-media-feed-experiment
 touch .env
 ```
 
-Then open it and insert your local DATABASE_URL and own SECRET_KEY
+    Then open it and insert your local DATABASE_URL and own SECRET_KEY
 
 ```
 DATABASE_URL=<db-address-here>
