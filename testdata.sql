@@ -1,5 +1,5 @@
 
-/* NOTE! CHANGE THE ADDRESS OF THE IMAGE-FILES. CTRL-F, /Users/sippo and replace all with your location */
+/* NOTE! CHANGE THE ADDRESS OF THE IMAGE-FILES. CTRL-F, Users/sippo and replace all with your location */
 
 /* inserting test images */
 insert into images values (1, 'img1', TRUE, pg_read_binary_file('/Users/sippo/social-media-feed-experiment/test_images/Fake1.jpg')::bytea);
