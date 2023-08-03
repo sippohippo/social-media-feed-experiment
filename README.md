@@ -3,7 +3,7 @@
 ## Status report (Välipalautus 2, 6.8.2023)
 
 * Currently the registration and login system is implemented
-* There is a very rough draft of the actual game / experiment where you get to see genuine and generated profiles
+* There is a very rough draft of the actual game / experiment where you get to see genuine and generated (only text features currently, profile pictures are still work in progress...)
 
 ### Note on data and GDPR compliance
 
@@ -20,12 +20,11 @@ git clone https://github.com/sippohippo/social-media-feed-experiment
 cd social-media-feed-experiment
 ```
 
-2. Setup a local .env file and define DATABASE_URL and SECRET_KEY
+2. Setup a local .env file and open it and insert your local DATABASE_URL and own SECRET_KEY
 
 ```bash
 touch .env
 ```
-Then insert your own secret key and address of the database.
 
 3. Activate a virtual environment and install dependencies
 
