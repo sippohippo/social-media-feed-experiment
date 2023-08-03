@@ -11,7 +11,7 @@ The three "real" test profiles in the test data of this public Github repository
 
 ## Installation and setup
 
-This repository has been tested with macOS Ventura. PostgreSQL should be installed.
+This repository has been tested with both macOS Ventura and Cubbli Linux. PostgreSQL should be installed.
 
 1. Clone this repository and go to the newly created directory
 
@@ -21,7 +21,6 @@ cd social-media-feed-experiment
 ```
 
 2. Create a local .env file. Then open it and insert your local DATABASE_URL and own SECRET_KEY
-
 
 ```bash
 touch .env
