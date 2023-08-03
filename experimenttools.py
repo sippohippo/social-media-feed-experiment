@@ -19,7 +19,7 @@ def select_posts(n_posts):
 
 def select_real_posts(n_posts):
     query = text("""
-            SELECT r.name, r.handle, r.content, i.data
+            SELECT r.name, r.handle, r.content, i.data, r.type
             FROM real_posts r, images i
             WHERE r.profilePicId = i.id
             """)
@@ -29,7 +29,7 @@ def select_real_posts(n_posts):
 
 def select_fake_posts(n_posts):
     query = text("""
-            SELECT pr.name, pr.handle, po.content, i.data
+            SELECT pr.name, pr.handle, po.content, i.data, pr.type
             FROM fake_posts po, fake_profiles pr, images i
             WHERE pr.profilePicId = i.id
             """)

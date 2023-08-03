@@ -18,7 +18,8 @@ id SERIAL PRIMARY KEY,
 name TEXT,
 handle TEXT,
 content TEXT,
-profilePicId INT REFERENCES images(id) 
+profilePicId INT REFERENCES images(id),
+type TEXT
 );
 
 CREATE TABLE fake_posts (
@@ -30,5 +31,6 @@ CREATE TABLE fake_profiles (
 id SERIAL PRIMARY KEY,
 name TEXT UNIQUE,
 handle TEXT,
-profilePicId INT REFERENCES images(id)
+profilePicId INT REFERENCES images(id),
+type TEXT
 );

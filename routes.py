@@ -40,6 +40,7 @@ def newuser():
 @app.route("/experiment",methods=["GET", "POST"])
 def experiment():
     profiles = experimenttools.select_posts(3)
+    print(profiles)
     if request.method == "GET":
         return render_template("experiment.html", profiles=profiles)
     if request.method == "POST":

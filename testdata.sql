@@ -11,9 +11,9 @@ insert into images values (6, 'img6', FALSE, pg_read_binary_file('/Users/sippo/s
 
 /* inserting test real posts */
 
-insert into real_posts values (1, 'Phil Madden', '@philmadden', 'Happinesss comes from WHAT we do. Fulfillment comes from WHY we do it.', 4);
-insert into real_posts values (2, 'William Bennett', '@williamb', 'When things do not work out as we wish, it may be that we have not been 100% clear in our request.', 5);
-insert into real_posts values (3, 'Matthew Gibson', '@MatthewGibson', 'Do not discount yourself no matter what you are doing. Everyone has a unique perspective that they can bring to the world.', 6);
+insert into real_posts values (1, 'Phil Madden', '@philmadden', 'Happinesss comes from WHAT we do. Fulfillment comes from WHY we do it.', 4, 'human');
+insert into real_posts values (2, 'William Bennett', '@williamb', 'When things do not work out as we wish, it may be that we have not been 100% clear in our request.', 5, 'human');
+insert into real_posts values (3, 'Matthew Gibson', '@MatthewGibson', 'Do not discount yourself no matter what you are doing. Everyone has a unique perspective that they can bring to the world.', 6, 'human');
 
 /* inserting test fake posts */
 
@@ -23,6 +23,7 @@ insert into fake_posts values (3, 'Barbie, an iconic figure that has inspired ge
 
 /* inserting test fake profiles */
 
-insert into fake_profiles values (1, 'Daniel Batista', '@danielbatista', 1);
-insert into fake_profiles values (2, 'Ralp Raynor', '@ralphraynor412', 2);
-insert into fake_profiles values (3, 'Eugene Pohlman', '@Pohlman', 3);
+insert into fake_profiles values (1, 'Daniel Batista', '@danielbatista', 1, 'bot');
+insert into fake_profiles values (2, 'Ralp Raynor', '@ralphraynor412', 2, 'bot');
+insert into fake_profiles values (3, 'Eugene Pohlman', '@Pohlman', 3, 'bot');
+x
