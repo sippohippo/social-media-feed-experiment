@@ -1,5 +1,3 @@
-/* inserting test user */
-insert into users values (1, 'test@test.fi', 'test', FALSE, FALSE);
 
 /* NOTE! CHANGE THE ADDRESS OF THE IMAGE-FILES. CTRL-F, /Users/sippo and replace all with your location */
 

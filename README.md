@@ -33,7 +33,7 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r ./requirements.txt
 ```
-4. Setup the database and populate it with test data
+4. Setup the database and populate it with test data. Note, you need to change the address in lines 7-12 in the test data! 
 
 ```bash
 psql < schema.sql
