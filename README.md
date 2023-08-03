@@ -11,10 +11,41 @@ The three "real" test profiles in the test data of this public Github repository
 
 ## Installation and setup
 
-This repository has been tested with a Mac (M1, Ventura). PostgreSQL should be installed.
+This repository has been tested with macOS Ventura. PostgreSQL should be installed.
 
-1. Clone this repository
-2. 
+1. Clone this repository and go to the newly created directory
+
+```bash
+git clone https://github.com/sippohippo/social-media-feed-experiment
+cd social-media-feed-experiment
+```
+
+2. Setup a local .env file and define DATABASE_URL and SECRET_KEY
+
+```bash
+touch .env
+```
+Then insert your own secret key and address of the database.
+
+3. Activate a virtual environment and install dependencies
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r ./requirements.txt
+```
+4. Setup the database and populate it with test data
+
+```bash
+psql < schema.sql
+psql < testdata.sql
+```
+
+5. Start the app
+
+```bash
+flask run
+```
 
 ## Project description
 
