@@ -25,6 +25,10 @@ cd social-media-feed-experiment
 ```bash
 touch .env
 ```
+```
+DATABASE_URL=<db-address-here>
+SECRET_KEY=<secret-key-here>
+```
 
 3. Activate a virtual environment and install dependencies
 
