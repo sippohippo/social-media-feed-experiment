@@ -20,13 +20,12 @@ git clone https://github.com/sippohippo/social-media-feed-experiment
 cd social-media-feed-experiment
 ```
 
-2. Create a local .env file
+2. Create a local .env file. Then open it and insert your local DATABASE_URL and own SECRET_KEY
+
 
 ```bash
 touch .env
 ```
-
-    Then open it and insert your local DATABASE_URL and own SECRET_KEY
 
 ```
 DATABASE_URL=<db-address-here>
