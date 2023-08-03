@@ -20,11 +20,14 @@ git clone https://github.com/sippohippo/social-media-feed-experiment
 cd social-media-feed-experiment
 ```
 
-2. Setup a local .env file and open it and insert your local DATABASE_URL and own SECRET_KEY
+2. Create a local .env file
 
 ```bash
 touch .env
 ```
+
+Then open it and insert your local DATABASE_URL and own SECRET_KEY
+
 ```
 DATABASE_URL=<db-address-here>
 SECRET_KEY=<secret-key-here>
@@ -37,6 +40,7 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r ./requirements.txt
 ```
+
 4. Setup the database and populate it with test data. Note, you need to change the address in lines 7-12 in the test data! 
 
 ```bash
