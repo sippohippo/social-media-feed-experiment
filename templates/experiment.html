@@ -9,3 +9,12 @@
 <p></p>
 <hr>
 {% endfor %}
+
+<p></p>
+
+{% for i in profiles %}
+{{ i.name }} is a
+<input type="radio" name={{ i.name }} value="1"> human
+<input type="radio" name={{ i.name }} value="2"> bot
+<p></p>
+{% endfor %}

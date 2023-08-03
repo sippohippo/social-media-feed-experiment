@@ -42,10 +42,9 @@ def admin():
     return "Admin page"
 
 
-@app.route("/experiment")
+@app.route("/experiment",methods=["GET", "POST"])
 def experiment():
     profiles = experimenttools.select_posts(3)
-    print(profiles)
     return render_template("experiment.html", profiles=profiles)
 
 
