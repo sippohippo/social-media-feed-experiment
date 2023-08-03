@@ -1,18 +1,20 @@
 # Social Media Feed Experiment Web App
 
-## Status report (Välipalautus 2)
+## Status report (Välipalautus 2, 6.8.2023)
 
-* Add something
-
+* Currently the registration and login system is implemented
+* There is a very rough draft of the actual game / experiment where you get to see genuine and generated profiles
 
 ### Note on data and GDPR compliance
 
-The three "real" test profiles in the test data of this public Github repository do not contain genuine names or post content, although the profile pictures are from genuine verified Twitter users. All data in this repository is purely for testing that the app works.
+The three "real" test profiles in the test data of this public Github repository do not contain genuine names or post content and are generated as are the fake profiles. All data in this repository is purely for testing that the app works.
 
 ## Installation and setup
 
-To be added...
+This repository has been tested with a Mac (M1, Ventura). PostgreSQL should be installed.
 
+1. Clone this repository
+2. 
 
 ## Project description
 
