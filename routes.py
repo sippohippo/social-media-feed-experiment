@@ -37,15 +37,18 @@ def newuser():
                 message="An account associated with this email already exists!")
 
 
-@app.route("/admin")
-def admin():
-    return "Admin page"
-
-
 @app.route("/experiment",methods=["GET", "POST"])
 def experiment():
     profiles = experimenttools.select_posts(3)
-    return render_template("experiment.html", profiles=profiles)
+    if request.method == "GET":
+        return render_template("experiment.html", profiles=profiles)
+    if request.method == "POST":
+        return render_template("result.html", profiles=profiles)
+
+
+@app.route("/admin")
+def admin():
+    return "Admin page"
 
 
 @app.route("/logout")
