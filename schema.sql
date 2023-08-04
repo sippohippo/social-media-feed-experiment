@@ -13,24 +13,24 @@ generated BOOLEAN,
 data BYTEA
 );
 
-CREATE TABLE real_posts (
+CREATE TABLE posts (
 id SERIAL PRIMARY KEY,
+type TEXT,
 name TEXT,
 handle TEXT,
 content TEXT,
-profilePicId INT REFERENCES images(id),
-type TEXT
+profilePicId INT REFERENCES images(id)
 );
 
-CREATE TABLE fake_posts (
+CREATE TABLE votes (
 id SERIAL PRIMARY KEY,
-content TEXT
+isBot BOOLEAN,
+postId INT REFERENCES posts(id),
+userId INT REFERENCES users(id)
 );
 
-CREATE TABLE fake_profiles (
-id SERIAL PRIMARY KEY,
-name TEXT UNIQUE,
-handle TEXT,
-profilePicId INT REFERENCES images(id),
-type TEXT
+CREATE TABLE results (
+id SERIAL PRIMARY KEY, 
+accuracy REAL,
+userId INT REFERENCES users(id)
 );

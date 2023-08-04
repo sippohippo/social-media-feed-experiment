@@ -12,10 +12,8 @@ To be added:
 * Collection of results to a database table
 * Calculation of accuracy in results page
 * Admin page and UI for updating / removing data
+* Proper graphics 
 
-Known bugs:
-
-* Sometimes the same profile repeats in the sampling process
 
 ### Note on data and GDPR compliance
 
@@ -96,13 +94,8 @@ The fake profiles and general setup of this type of an experiment is described i
 ### Tentative database tables
 
 * users (contains credentials for users and admins)
-* real_posts (contains the real posts and profile information of the creator of the post. The data has been collected earlier via the Twitter API)
-* fake_posts (the generated texts used to populate a post, generated using GPT-3)
-* fake_profiles (the profile information of fake profiles generated with a basic python script)
-* results (each row contains the results of a game played by the participant)
+* posts (contains the posts and profile information of the creator of the post. The data of real profiles has been collected earlier via the Twitter API and generated data produced with GPT-3)
 * images (profile images created with StyleGAN as well as real profile images)
-
-The real_posts and fake_posts and fake_profiles are split into three separate tables although technically all could be put into one table if adding a column that indicates if the profile is real or fake. I decided to split them into three, so that the real profiles will always stay the same, while the posts and fake profiles can be mixed easily to add variety to each time the game is played.
 
 All profile and post data has already been generated / collected already. 
 
