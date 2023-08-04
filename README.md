@@ -5,15 +5,12 @@
 * Currently the registration and login system is implemented
 * There is a very rough draft of the actual game / experiment where you get to see genuine and generated (only text features currently, profile pictures are still work in progress...)
 
-### Known bugs and missing features
-
 To be added:
 
 * Collection of results to a database table
 * Calculation of accuracy in results page
 * Admin page and UI for updating / removing data
 * Proper graphics 
-
 
 ### Note on data and GDPR compliance
 
@@ -96,6 +93,8 @@ The fake profiles and general setup of this type of an experiment is described i
 * users (contains credentials for users and admins)
 * posts (contains the posts and profile information of the creator of the post. The data of real profiles has been collected earlier via the Twitter API and generated data produced with GPT-3)
 * images (profile images created with StyleGAN as well as real profile images)
+* votes (contains data on how each user voted on a given experiment)
+* results (contains the statistics from each experiment that was conducted)
 
 All profile and post data has already been generated / collected already. 
 
