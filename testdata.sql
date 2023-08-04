@@ -26,4 +26,3 @@ insert into fake_posts values (3, 'Barbie, an iconic figure that has inspired ge
 insert into fake_profiles values (1, 'Daniel Batista', '@danielbatista', 1, 'bot');
 insert into fake_profiles values (2, 'Ralp Raynor', '@ralphraynor412', 2, 'bot');
 insert into fake_profiles values (3, 'Eugene Pohlman', '@Pohlman', 3, 'bot');
-x
