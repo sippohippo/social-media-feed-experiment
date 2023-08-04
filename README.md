@@ -5,9 +5,21 @@
 * Currently the registration and login system is implemented
 * There is a very rough draft of the actual game / experiment where you get to see genuine and generated (only text features currently, profile pictures are still work in progress...)
 
+### Known bugs and missing features
+
+To be added:
+
+* Collection of results to a database table
+* Calculation of accuracy in results page
+* Admin page and UI for updating / removing data
+
+Known bugs:
+
+* Sometimes the same profile repeats in the sampling process
+
 ### Note on data and GDPR compliance
 
-The three "real" test profiles in the test data of this public Github repository do not contain genuine names or post content and are generated as are the fake profiles. All data in this repository is purely for testing that the app works.
+The "real" test profiles in the test data of this public Github repository do not contain genuine names or post content and are generated with a similar method as the fake profiles. All data in this repository is purely for testing that the app works. In production, the real profiles would contain data collected via Twitter's API. 
 
 ## Installation and setup
 
@@ -51,6 +63,15 @@ psql < testdata.sql
 ```bash
 flask run
 ```
+
+## User guide
+
+1. Create a new account
+2. Start the experiment
+3. Vote for each profile and press submit
+4. See the results
+5. Return to main menu and quit or do the experiment again
+
 
 ## Project description
 
