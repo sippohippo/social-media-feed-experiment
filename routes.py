@@ -2,8 +2,6 @@ from flask import Flask, render_template, redirect, request, session, make_respo
 import usertools
 import experimenttools
 from app import app
-from io import BytesIO
-import base64
 
 
 @app.route("/")

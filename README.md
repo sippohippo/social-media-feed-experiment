@@ -46,7 +46,7 @@ source venv/bin/activate
 pip install -r ./requirements.txt
 ```
 
-4. Setup the database and populate it with test data. Note, you need to change the address in lines 5-10 in the test data! 
+4. Setup the database and populate it with test data. Note, you need to change the image file addresses to your local ones in lines 5-10 in the test data! 
 
 ```bash
 psql < schema.sql
