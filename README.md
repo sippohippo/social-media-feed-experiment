@@ -4,10 +4,10 @@
 
 * Currently the registration and login system is implemented
 * There is a very rough draft of the actual game / experiment where you get to see genuine and generated 
+* The results (votes) are recorded into the database
 
 To be added:
 
-* Collection of results to a database table
 * Calculation of accuracy in results page
 * Admin page and UI for updating / removing data
 * Proper graphics 
