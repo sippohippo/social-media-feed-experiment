@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, request, session, make_respo
 import usertools
 import experimenttools
 from app import app
+from io import BytesIO
 import base64
 
 
@@ -41,15 +42,8 @@ def newuser():
 @app.route("/experiment",methods=["GET", "POST"])
 def experiment():
     profiles = experimenttools.select_posts(3)
-    images = []
-    for i in range(len(profiles)):
-        image = profiles[i][4]
-        response = make_response(bytes(image))
-        images.append(response.headers.set("Content-Type", "image/jpeg"))
-        #images.append(image)
-
     if request.method == "GET":
-        return render_template("experiment.html", profiles=list((zip(profiles,images))))
+        return render_template("experiment.html", profiles=profiles)
     if request.method == "POST":
         return render_template("result.html", profiles=profiles)
 
@@ -64,3 +58,11 @@ def logout():
     del session["email"]
     del session["user_id"]
     return redirect("/")
+
+
+@app.route("/show/<int:id>")
+def show(id):
+    data = experimenttools.select_image(id)
+    response = make_response(bytes(data))
+    response.headers.set("Content-Type", "image/jpeg")
+    return response

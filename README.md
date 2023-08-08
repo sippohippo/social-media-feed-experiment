@@ -3,7 +3,7 @@
 ## Status report (Välipalautus 2, 6.8.2023)
 
 * Currently the registration and login system is implemented
-* There is a very rough draft of the actual game / experiment where you get to see genuine and generated (only text features currently, profile pictures are still work in progress...)
+* There is a very rough draft of the actual game / experiment where you get to see genuine and generated 
 
 To be added:
 

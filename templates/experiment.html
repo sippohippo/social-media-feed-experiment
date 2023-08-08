@@ -1,11 +1,11 @@
 <h1>Find the bots</h1>
 
 {% for i in profiles %}
-<b>{{ i.0.name }}</b>
-{{ i.0.handle }}
-<img url={{i.1}}>
+<img src="{{ url_for('show', id=i.id) }}" width="60" height="60">
+<b>{{ i.name }}</b>
+{{ i.handle }}
 <p></p>
-{{ i.0.content }}
+{{ i.content }}
 <p></p>
 <hr>
 {% endfor %}
@@ -14,7 +14,7 @@
 
 <form action="/experiment" method="POST">
 {% for i in profiles %}
-{{ i.0.name }} is a
+{{ i.name }} is a
 <input type="radio" name={{ i.0.name }} value="1"> human
 <input type="radio" name={{ i.0.name }} value="2"> bot
 <p></p>

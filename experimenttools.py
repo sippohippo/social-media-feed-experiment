@@ -4,7 +4,7 @@ from sqlalchemy.sql import text
 
 def select_posts(n_posts):
     query = text("""
-            SELECT p.name, p.handle, p.content, p.type, i.data
+            SELECT p.name, p.handle, p.content, p.type, i.id
             FROM posts p, images i
             WHERE p.profilePicId = i.id
             """)
@@ -12,3 +12,13 @@ def select_posts(n_posts):
     posts = sample(result, n_posts)
     shuffle(posts)
     return posts
+
+def select_image(id):
+    query = text("""
+            SELECT data
+            FROM images
+            WHERE id=:id
+            """)
+    result = db.session.execute(query, {"id":id})
+    data = result.fetchone()[0]
+    return data
