@@ -39,10 +39,19 @@ def newuser():
 
 @app.route("/experiment",methods=["GET", "POST"])
 def experiment():
+    votes = []
     profiles = experimenttools.select_posts(3)
+    index = 1
     if request.method == "GET":
         return render_template("experiment.html", profiles=profiles)
     if request.method == "POST":
+        for profile in profiles:
+            print(index)
+            vote = request.form[str(index)]
+            print(vote)
+            votes.append(vote)
+            index +=1
+        experimenttools.record_votes(profiles, votes)
         return render_template("result.html", profiles=profiles)
 
 
@@ -64,3 +73,5 @@ def show(id):
     response = make_response(bytes(data))
     response.headers.set("Content-Type", "image/jpeg")
     return response
+
+

@@ -5,10 +5,10 @@ from flask import session
 from database import db
 
 def login(email, password):
-    query = text("SELECT email, password FROM users WHERE email=:email")
+    query = text("SELECT id, email, password FROM users WHERE email=:email")
     result = db.session.execute(query, {"email":email})
     user = result.fetchone()
-
+    
     if email_exists(email):
         if check_password_hash(user.password, password):
             session["user_id"] = user[0]

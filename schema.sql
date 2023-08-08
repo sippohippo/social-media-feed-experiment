@@ -26,7 +26,7 @@ CREATE TABLE votes (
 id SERIAL PRIMARY KEY,
 isBot BOOLEAN,
 postId INT REFERENCES posts(id),
-userId INT REFERENCES users(id)
+user INT REFERENCES users(email)
 );
 
 CREATE TABLE results (

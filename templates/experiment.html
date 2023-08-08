@@ -15,9 +15,10 @@
 <form action="/experiment" method="POST">
 {% for i in profiles %}
 {{ i.name }} is a
-<input type="radio" name={{ i.name }} value="1"> human
-<input type="radio" name={{ i.name }} value="2"> bot
+<input type="radio" id={{loop.index}} name={{loop.index}} value="FALSE"> human
+<input type="radio" id={{loop.index}} name={{loop.index}} value="TRUE"> bot
 <p></p>
+
 {% endfor %}
 
 <input type="submit" value="Submit">

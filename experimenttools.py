@@ -1,3 +1,4 @@
+from flask import session
 from random import sample, randint, shuffle
 from database import db
 from sqlalchemy.sql import text
@@ -26,16 +27,18 @@ def select_image(id):
 
 
 def record_votes(profiles, votes):
-
     profilesIds = []
+    
     for i in profiles:
         profilesIds.append(i[5])
 
-    print(profilesIds)
-
-    # query = text("""
-    #         INSERT INTO votes
-    #         VALUES ()
-    #         """)
-    # db.session.execute(query, {"email":email, "password":hashed_password})
-    # db.session.commit()
+    for i in range(0, len(votes)):
+        vote = votes[i]
+        post = profilesIds[i]
+        user = session["user_id"]
+        query = text("""
+                INSERT INTO votes (isBot, postId, userId)
+                VALUES (:isBot, :postId, :userId)
+                """)
+        db.session.execute(query, {"isBot":vote, "postId":post, "userId":user})
+    db.session.commit()
