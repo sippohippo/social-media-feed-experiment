@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, request, session, make_response
 import usertools
 import experimenttools
+import admintools
 from app import app
 
 
@@ -81,7 +82,13 @@ def experiment():
 @app.route("/admin")
 def admin():
     if session["admin"]:
-        return render_template("admin.html")
+        participants = admintools.get_participants()
+        responses = admintools.total_responses()
+        accuracy = admintools.average_accuracy()
+        return render_template("admin.html", 
+                participants=participants, 
+                responses=responses, 
+                accuracy=accuracy)
     return render_template("invalid.html", 
             message="Access denied!")
 
