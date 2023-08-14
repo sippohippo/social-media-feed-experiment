@@ -30,7 +30,25 @@ def newuser():
 
     if request.method == "POST":
         email = request.form["email"]
+        if len(email) < 4:
+            return render_template("invalid.html",
+                    message="The provided email is too short. Please include the whole address!")
+        if len(email) > 30:
+            return render_template("invalid.html",
+                    message="The provided email is too long. Please enter a valid email!")
+
         password = request.form["password"]
+        passwordrepeat = request.form["passwordrepeat"]
+        if password != passwordrepeat:
+            return render_template("invalid.html",
+                    message="The provided passwords do not match!")
+        if len(password) < 4:
+            return render_template("invalid.html",
+                    message="The provided password is too short!")
+        if len(password) > 30:
+            return render_template("invalid.html",
+                    message="The provided password is too long!")
+
         if usertools.newuser(email, password):
             return redirect("/")
         return render_template("invalid.html",

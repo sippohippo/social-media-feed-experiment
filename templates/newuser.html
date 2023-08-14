@@ -1,6 +1,7 @@
 <h1>Create new user</h1>
 
 <p>Your email will work as your username in this app.</p>
+<p>Both email and password should be between 4 and 30 characters.</p>
 
 <form action="/newuser" method="POST">
 Email:
@@ -8,6 +9,9 @@ Email:
 <br>
 Password:
 <input type="password" name="password">
+<br>
+Repeat password:
+<input type="password" name="passwordrepeat">
 <br>
 <input type="submit" value="Create account & login">
 </form>
