@@ -68,13 +68,13 @@ def experiment():
         return render_template("experiment.html", profiles=profiles)
     if request.method == "POST":
         for profile in profiles:
-            print(index)
             vote = request.form[str(index)]
-            print(vote)
             votes.append(vote)
             index +=1
-        experimenttools.record_votes(profiles, votes)
-        return render_template("result.html", profiles=profiles)
+        accuracy = experimenttools.record_votes(profiles, votes)
+        #experimenttools.record_accuracy(accuracy)
+        #accuracy = experimenttools.accuracy(profiles, votes)
+        return render_template("result.html", profiles=profiles, accuracy=accuracy)
 
 
 @app.route("/admin")
@@ -105,7 +105,6 @@ def terms():
         response = request.form["response"]
         if response == "1":
             user = session["email"]
-            print(user)
             usertools.accept_terms(user)
             return redirect("/experiment")
         return redirect("/")
