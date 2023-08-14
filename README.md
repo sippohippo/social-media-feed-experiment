@@ -1,16 +1,16 @@
 # Social Media Feed Experiment Web App
 
-## Status report (Välipalautus 2, 6.8.2023)
+## Status report (Välipalautus 3, 20.8.2023)
 
-* Currently the registration and login system is implemented
-* There is a very rough draft of the actual game / experiment where you get to see genuine and generated 
-* The results (votes) are recorded into the database
+* The registration, experiment and general functionalities for regular users are fully functional and ready
+* The user must now accept the terms of the experiment before they can start it
+* The results (votes) are recorded into the database and the accuracy is counted and stored as well
+* Admin profiles can view who has participated in the experiment and what their accuracy is
 
 To be added:
 
-* Calculation of accuracy in results page
-* Admin page and UI for updating / removing data
-* Proper graphics 
+* Admin page updating / removing data
+* Smoother graphics 
 
 ### Note on data and GDPR compliance
 
@@ -72,11 +72,11 @@ flask run
 
 The purpose of this app is two-fold. First, it works as a game that demonstrates how difficult it is to detect bot profiles on a social media feed. Second, it allows running experiments and collecting data on how well people playing the game can distinguish real and fake profiles. 
 
-For the user, the app is a game where they can log in and play. When they begin to play, they are presented a simulated social media feed (e.g. like on Twitter), with multiple posts visible at once. These posts will be drawn randomly from a large sample of genuine and fake ones. Thus, each game will be unique and each user will see a different instance of the simulated social media feed. The user can then vote for each of these posts if they believe it is written by a bot or a real human. Once they are done labeling each post, they see how many accounts they labeled correctly and what the average score is.
+For the user, the app is a game where they can log in and play. When they begin to play, they are presented a simulated social media feed (e.g. like on Twitter), with multiple posts visible at once. These posts will be drawn randomly from a large sample of genuine and fake ones. Thus, each game will be unique and each user will see a different instance of the simulated social media feed. The user can then vote for each of these posts if they believe it is written by a bot or a real human. Once they are done labeling each post, they see how many accounts they labeled correctly and what their score is.
 
 For the administrator, the app allows setting up the posts that the users see, and viewing statistics on how well the users of the app have performed in the game. 
 
-The fake profiles and general setup of this type of an experiment is described in more detail and demonstrated in the paper *Are Deep Learning-Generated Social Media Profiles Indistinguishable from Real Profiles?* [[1]](#1). This previous implementation was done with a Qualtrics survey, and the goal of this project is to allow hosting the experiment on a webpage in the future. A demo of what the simulated feed and voting options could look like can be seen [here](https://drive.google.com/file/d/1Thu1EiI0KjJo8-HpJuNy8ZfOKenInpRG/view?usp=share_link).
+The fake profiles and general setup of this type of an experiment is described in more detail and demonstrated in the paper *Are Deep Learning-Generated Social Media Profiles Indistinguishable from Real Profiles?* [[1]](#1). This previous implementation was done with a Qualtrics survey, and the goal of this project is to allow hosting the experiment on a webpage in the future.
 
 
 ### Main features
