@@ -16,7 +16,7 @@ To be added:
 
 The "real" test profiles in the test data of this public Github repository do not contain genuine names or post content and are generated with a similar method as the fake profiles. All data in this repository is purely for testing that the app works. In production, the real profiles would contain data collected via Twitter's API. 
 
-## Installation and setup
+## Installation, setup and testing
 
 This repository has been tested with both macOS Ventura and Cubbli Linux. PostgreSQL should be installed.
 
@@ -58,6 +58,14 @@ psql < testdata.sql
 ```bash
 flask run
 ```
+
+6. If you want to test admin features, make a profile with the email / name "test" and then run the command below. 
+Note, by modifying the maketestadmin.sql file before running it, you can make any profile an admin. Log in again with your account and see the admin view.
+
+```bash
+psql < maketestadmin.sql
+```
+
 
 ## User guide
 
