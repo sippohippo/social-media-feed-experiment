@@ -5,14 +5,17 @@ from flask import session
 from database import db
 
 def login(email, password):
-    query = text("SELECT id, email, password FROM users WHERE email=:email")
+    query = text("SELECT id, email, password, admin FROM users WHERE email=:email")
     result = db.session.execute(query, {"email":email})
     user = result.fetchone()
 
     if email_exists(email):
         if check_password_hash(user.password, password):
-            session["user_id"] = user[0]
+            session["user_id"] = user.id
             session["email"] = email
+            session["admin"] = False
+            if user.admin:
+                session["admin"] = True
             return True
         return False
     return False
@@ -52,3 +55,14 @@ def terms_accepted(email):
     if response:
         return True
     return False
+
+
+def is_admin(email):
+    query = text("SELECT admin FROM users WHERE email=:email")
+    result = db.session.execute(query, {"email":email})
+    response = result.fetchone()[0]
+    if response:
+        return True
+    return False
+
+

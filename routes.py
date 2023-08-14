@@ -19,6 +19,8 @@ def login():
         password = request.form["password"]
 
         if usertools.login(email, password):
+            if usertools.is_admin(email):
+                return redirect("/admin")
             return redirect("/")
         return render_template("invalid.html", message="Invalid username or password!")
 
@@ -78,7 +80,10 @@ def experiment():
 
 @app.route("/admin")
 def admin():
-    return "Admin page"
+    if session["admin"]:
+        return render_template("admin.html")
+    return render_template("invalid.html", 
+            message="Access denied!")
 
 
 @app.route("/logout")
