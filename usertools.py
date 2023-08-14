@@ -8,7 +8,7 @@ def login(email, password):
     query = text("SELECT id, email, password FROM users WHERE email=:email")
     result = db.session.execute(query, {"email":email})
     user = result.fetchone()
-    
+
     if email_exists(email):
         if check_password_hash(user.password, password):
             session["user_id"] = user[0]
@@ -37,3 +37,18 @@ def email_exists(email):
     if not result.fetchone():
         return False
     return True
+
+
+def accept_terms(email):
+    query = text("UPDATE users SET acceptTerms = TRUE WHERE email=:email")
+    db.session.execute(query, {"email":email})
+    db.session.commit()
+
+
+def terms_accepted(email):
+    query = text("SELECT acceptTerms FROM users WHERE email=:email")
+    result = db.session.execute(query, {"email":email})
+    response = result.fetchone()[0]
+    if response:
+        return True
+    return False

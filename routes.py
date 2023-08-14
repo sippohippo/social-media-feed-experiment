@@ -57,6 +57,10 @@ def newuser():
 
 @app.route("/experiment",methods=["GET", "POST"])
 def experiment():
+    user = session["email"]
+    if not usertools.terms_accepted(user):
+        return redirect("/terms")
+
     votes = []
     profiles = experimenttools.select_posts(3)
     index = 1
@@ -91,5 +95,19 @@ def show(id):
     response = make_response(bytes(data))
     response.headers.set("Content-Type", "image/jpeg")
     return response
+
+
+@app.route("/terms",methods=["GET", "POST"])
+def terms():
+    if request.method == "GET":
+        return render_template("terms.html")
+    if request.method == "POST":
+        response = request.form["response"]
+        if response == "1":
+            user = session["email"]
+            print(user)
+            usertools.accept_terms(user)
+            return redirect("/experiment")
+        return redirect("/")
 
 
