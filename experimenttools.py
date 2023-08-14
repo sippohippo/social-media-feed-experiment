@@ -57,4 +57,11 @@ def record_votes(profiles, votes):
 
 
 def record_accuracy(accuracy):
-    pass
+    user = session["user_id"]
+    query = text("""
+            INSERT INTO results (accuracy, userId)
+            VALUES (:accuracy, :userId)
+            """)
+    db.session.execute(query, {"accuracy":accuracy, "userId":user})
+    db.session.commit()
+

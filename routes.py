@@ -72,8 +72,7 @@ def experiment():
             votes.append(vote)
             index +=1
         accuracy = experimenttools.record_votes(profiles, votes)
-        #experimenttools.record_accuracy(accuracy)
-        #accuracy = experimenttools.accuracy(profiles, votes)
+        experimenttools.record_accuracy(accuracy)
         return render_template("result.html", profiles=profiles, accuracy=accuracy)
 
 
