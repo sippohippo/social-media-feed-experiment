@@ -27,7 +27,7 @@ def newuser(email, password):
         return False
 
     query = text("""
-    	INSERT INTO users (email,password,admin,acceptTerms)
+        INSERT INTO users (email,password,admin,acceptTerms)
         VALUES (:email,:password,FALSE,FALSE)""")
     db.session.execute(query, {"email":email, "password":hashed_password})
     db.session.commit()
@@ -64,5 +64,3 @@ def is_admin(email):
     if response:
         return True
     return False
-
-
