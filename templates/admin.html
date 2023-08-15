@@ -1,11 +1,15 @@
-<h1>Admin view</h1>
-<h2>Statistics</h2>
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>Admin view</h2>
+
+<h3>Statistics</h3>
 
 <p>Number of responses: {{ responses }}</p>
 <p>Average accuracy: {{'%0.2f' % accuracy}}%</p>
 
 <hr>
-<h2>List of respondents</h2>
+<h3>List of respondents</h3>
 
 {% for i in participants %}
 {{ i.email }}
@@ -14,3 +18,5 @@
 <hr>
 <br>
 <a href="/logout">Log out</a>
+
+{% endblock %}

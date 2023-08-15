@@ -1,4 +1,7 @@
-<h1>Find the bots</h1>
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>Find the bots</h2>
 
 {% for i in profiles %}
 <img src="{{ url_for('show', id=i.id) }}" width="60" height="60">
@@ -23,3 +26,5 @@
 
 <input type="submit" value="Submit">
 </form>
+
+{% endblock %}

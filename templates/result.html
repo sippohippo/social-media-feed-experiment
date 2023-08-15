@@ -1,4 +1,7 @@
-<h1>Results</h1>
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>Results</h2>
 
 {% for i in profiles %}
 {{ i.name }} was a {{ i.type }}
@@ -10,3 +13,4 @@ Your accuracy was {{ accuracy }}%
 
 <a href="/">Return to main menu</a>
 
+{% endblock %}
