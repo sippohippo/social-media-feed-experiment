@@ -1,18 +1,21 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<h2>Find the bots</h2>
+<h2>Find the bots from the feed below</h2>
+<br>
 
 {% for i in profiles %}
-<img src="{{ url_for('show', id=i.id) }}" width="60" height="60">
-<b>{{ i.name }}</b>
-{{ i.handle }}
+<img src="{{ url_for('show', id=i.id) }}" width="50" height="50">
+<b>{{ i.name }}</b> 
+<span style="color: #999999">{{ i.handle }}
+&#183 12min</span>
 <p></p>
 {{ i.content }}
 <p></p>
 <hr>
 {% endfor %}
 
+<br>
 <br>
 
 <form action="/experiment" method="POST">
