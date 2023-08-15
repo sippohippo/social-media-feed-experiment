@@ -7,3 +7,4 @@ venv
 .env
 scrapbook.py
 testing.ipynbb
+.pylintrc
