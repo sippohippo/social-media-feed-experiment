@@ -21,7 +21,7 @@
 <form action="/experiment" method="POST">
 {% for i in profiles %}
 {{ i.name }} is a
-<input type="radio" id={{loop.index}} name={{loop.index}} value="FALSE"> human
+<input type="radio" id={{loop.index}} name={{loop.index}} value="FALSE" required> human
 <input type="radio" id={{loop.index}} name={{loop.index}} value="TRUE"> bot
 <p></p>
 
