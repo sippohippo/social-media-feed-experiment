@@ -1,7 +1,8 @@
-from flask import session
-from random import sample, randint, shuffle
-from database import db
+from random import sample, shuffle
 from sqlalchemy.sql import text
+from flask import session
+from database import db
+
 
 def select_posts(n_posts):
     query = text("""
@@ -27,22 +28,22 @@ def select_image(id):
 
 
 def record_votes(profiles, votes):
-    profilesIds = []
-    profileLabel = []
+    profile_ids = []
+    profile_labels = []
     total_correct = 0
 
     for i in profiles:
-        profilesIds.append(i[5])
+        profile_ids.append(i[5])
         label = i[3]
         if label == "bot":
-            profileLabel.append("TRUE")
+            profile_labels.append("TRUE")
         else:
-            profileLabel.append("FALSE")
+            profile_labels.append("FALSE")
 
     for i in range(0, len(votes)):
         vote = votes[i]
-        post = profilesIds[i]
-        true_label = profileLabel[i]
+        post = profile_ids[i]
+        true_label = profile_labels[i]
         if vote == true_label:
             total_correct += 1
 
@@ -64,4 +65,3 @@ def record_accuracy(accuracy):
             """)
     db.session.execute(query, {"accuracy":accuracy, "userId":user})
     db.session.commit()
-

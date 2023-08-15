@@ -70,7 +70,7 @@ def experiment():
     if request.method == "GET":
         return render_template("experiment.html", profiles=profiles)
     if request.method == "POST":
-        for profile in profiles:
+        while index <= len(profiles):
             vote = request.form[str(index)]
             votes.append(vote)
             index +=1
@@ -85,11 +85,11 @@ def admin():
         participants = admintools.get_participants()
         responses = admintools.total_responses()
         accuracy = admintools.average_accuracy()
-        return render_template("admin.html", 
-                participants=participants, 
-                responses=responses, 
+        return render_template("admin.html",
+                participants=participants,
+                responses=responses,
                 accuracy=accuracy)
-    return render_template("invalid.html", 
+    return render_template("invalid.html",
             message="Access denied!")
 
 
@@ -119,5 +119,3 @@ def terms():
             usertools.accept_terms(user)
             return redirect("/experiment")
         return redirect("/")
-
-
