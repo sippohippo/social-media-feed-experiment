@@ -8,7 +8,7 @@ def get_participants():
             SELECT DISTINCT email
             FROM users
             WHERE id IN (
-                SELECT DISTINCT id
+                SELECT DISTINCT userId
                 FROM results
                 )
             """)
