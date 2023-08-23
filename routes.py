@@ -85,6 +85,8 @@ def admin():
         participants = admintools.get_participants()
         responses = admintools.total_responses()
         accuracy = admintools.average_accuracy()
+        if accuracy is None:
+            accuracy = 0 
         return render_template("admin.html",
                 participants=participants,
                 responses=responses,
