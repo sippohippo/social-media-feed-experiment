@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, session, make_response
+from flask import render_template, redirect, request, session, make_response
 import usertools
 import experimenttools
 import admintools
@@ -64,16 +64,14 @@ def experiment():
     if not usertools.terms_accepted(user):
         return redirect("/terms")
     votes = []
-    index = 1
     if request.method == "GET":
         global profiles
         profiles = experimenttools.select_posts(3)
         return render_template("experiment.html", profiles=profiles)
     if request.method == "POST":
-        while index <= len(profiles):
-            vote = request.form[str(index)]
+        for i in range(1, len(profiles) + 1):
+            vote = request.form[str(i)]
             votes.append(vote)
-            index +=1
         accuracy = experimenttools.record_votes(profiles, votes)
         experimenttools.record_accuracy(accuracy)
         return render_template("result.html", profiles=profiles, accuracy=accuracy)
@@ -86,7 +84,7 @@ def admin():
         responses = admintools.total_responses()
         accuracy = admintools.average_accuracy()
         if accuracy is None:
-            accuracy = 0 
+            accuracy = 0
         return render_template("admin.html",
                 participants=participants,
                 responses=responses,
@@ -102,9 +100,9 @@ def logout():
     return redirect("/")
 
 
-@app.route("/show/<int:id>")
-def show(id):
-    data = experimenttools.select_image(id)
+@app.route("/show/<int:image_id>")
+def show(image_id):
+    data = experimenttools.select_image(image_id)
     response = make_response(bytes(data))
     response.headers.set("Content-Type", "image/jpeg")
     return response
