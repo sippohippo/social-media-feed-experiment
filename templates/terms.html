@@ -17,6 +17,7 @@
 <input type="radio" name="response" value=0> Decline and go back to main menu
 <br>
 <button type="submit" value="Submit">Submit</button>
+<input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
 </form>
 
 {% endblock %}
