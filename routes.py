@@ -97,6 +97,7 @@ def admin():
 def logout():
     del session["email"]
     del session["user_id"]
+    del session["csrf_token"]
     return redirect("/")
 
 

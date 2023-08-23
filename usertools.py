@@ -1,6 +1,7 @@
 from werkzeug.security import check_password_hash, generate_password_hash
 from sqlalchemy.sql import text
 from flask import session
+from secrets import token_hex
 from database import db
 
 def login(email, password):
@@ -16,6 +17,7 @@ def login(email, password):
         if check_password_hash(user.password, password):
             session["user_id"] = user.id
             session["email"] = email
+            session["csrf_token"] = token_hex(16)
             session["admin"] = False
             if user.admin:
                 session["admin"] = True
