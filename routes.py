@@ -63,11 +63,11 @@ def experiment():
     user = session["email"]
     if not usertools.terms_accepted(user):
         return redirect("/terms")
-
     votes = []
-    profiles = experimenttools.select_posts(3)
     index = 1
     if request.method == "GET":
+        global profiles
+        profiles = experimenttools.select_posts(3)
         return render_template("experiment.html", profiles=profiles)
     if request.method == "POST":
         while index <= len(profiles):
