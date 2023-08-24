@@ -1,20 +1,11 @@
 # Social Media Feed Experiment Web App
 
-## Status report (Välipalautus 3, 20.8.2023)
+## Changelog for final submissions (Lopullinen palautus 3, 3.9.2023)
 
-* The registration, experiment and general functionalities for regular users are fully functional and ready
-* The user must now accept the terms of the experiment before they can start it
-* The results (votes) are recorded into the database and the accuracy is counted and stored as well
-* Admin profiles can view who has participated in the experiment and what their accuracy is
+* Admin profiles can now remove participants
+* Bugs related to results page and calculation of accuracy are now fixed
+* CSRF vulnerability has been removed
 
-To be added:
-
-* Admin page updating / removing data
-* Smoother graphics 
-
-### Note on data and GDPR compliance
-
-The "real" test profiles in the test data of this public Github repository do not contain genuine names or post content and are generated with a similar method as the fake profiles. All data in this repository is purely for testing that the app works. In production, the real profiles would contain data collected via Twitter's API. 
 
 ## Installation, setup and testing
 
@@ -93,10 +84,10 @@ The fake profiles and general setup of this type of an experiment is described i
 * After logging in the user sees the main menu where the options are to play the game or log out
 * When choosing to play the game, the app takes the user to a new page which consists of a simulated social media feed with 3 visible posts. Each post contains text as well as the name and profile picture of the profile that posted it. The user can mark each profile as a human or a bot. 
 * After completing the task the user sees how many profiles they labeled accurately and then can play again or go to the main menu.
-* The administrator can add or remove profiles to the experiment
+* The administrator can remove participants
 * The administrator can view statistics on how well the users have performed
 
-### Tentative database tables
+### Database tables
 
 * users (contains credentials for users and admins)
 * posts (contains the posts and profile information of the creator of the post. The data of real profiles has been collected earlier via the Twitter API and generated data produced with GPT-3)
@@ -105,6 +96,10 @@ The fake profiles and general setup of this type of an experiment is described i
 * results (contains the statistics from each experiment that was conducted)
 
 All profile and post data has already been generated / collected already. 
+
+### Note on data and GDPR compliance
+
+The "real" test profiles in the test data of this public Github repository do not contain genuine names or post content and are generated with a similar method as the fake profiles. All data in this repository is purely for testing that the app works. In production, the real profiles would contain data collected via Twitter's API. 
 
 
 ## References
