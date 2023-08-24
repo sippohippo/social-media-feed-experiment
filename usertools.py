@@ -1,7 +1,7 @@
+from secrets import token_hex
 from werkzeug.security import check_password_hash, generate_password_hash
 from sqlalchemy.sql import text
 from flask import session
-from secrets import token_hex
 from database import db
 
 def login(email, password):

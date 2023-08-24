@@ -98,20 +98,20 @@ def admin():
 @app.route("/remove", methods=["GET", "POST"])
 def remove():
     if session["admin"]:
-        participants = admintools.get_participants()    
+        participants = admintools.get_participants()
 
         if request.method == "GET":
             return render_template("removeuser.html", participants=participants)
 
         if request.method == "POST":
             user = request.form["email"]
-            userId = admintools.get_id(user)
-            if userId is None:
+            user_id = admintools.get_id(user)
+            if user_id is None:
                 return render_template("adminerror.html",
                         message="Please enter a valid email from the list!")
 
-            admintools.remove_user(userId[0])
-            return redirect("/admin")            
+            admintools.remove_user(user_id[0])
+            return redirect("/admin")
     return render_template("invalid.html",
             message="Access denied!")
 

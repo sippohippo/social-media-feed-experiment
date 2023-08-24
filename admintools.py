@@ -1,6 +1,5 @@
-from flask import session
-from database import db
 from sqlalchemy.sql import text
+from database import db
 
 
 def get_participants():
@@ -14,7 +13,7 @@ def get_participants():
             """)
     result = db.session.execute(query)
     participants = result.fetchall()
-    return participants    
+    return participants
 
 
 def total_responses():
@@ -34,30 +33,30 @@ def average_accuracy():
             """)
     result = db.session.execute(query)
     accuracy = result.fetchone()[0]
-    return accuracy    
+    return accuracy
 
 
-def remove_user(userId):
+def remove_user(user_id):
     query = text("""
             DELETE FROM votes
             WHERE userId=:userId
             """)
-    db.session.execute(query, {"userId":userId})
-    
+    db.session.execute(query, {"userId":user_id})
+
     query = text("""
             DELETE FROM results
             WHERE userId=:userId
             """)
-    db.session.execute(query, {"userId":userId})
+    db.session.execute(query, {"userId":user_id})
 
     query = text("""
             DELETE FROM users
             WHERE id=:userId
             """)
-    db.session.execute(query, {"userId":userId})
+    db.session.execute(query, {"userId":user_id})
 
     db.session.commit()
-    
+
 
 def get_id(email):
     query = text("""
@@ -66,5 +65,5 @@ def get_id(email):
             WHERE email=:email
             """)
     result = db.session.execute(query, {"email":email})
-    userId = result.fetchone()
-    return userId
+    user_id = result.fetchone()
+    return user_id
