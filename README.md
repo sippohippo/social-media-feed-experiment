@@ -46,6 +46,8 @@ pip install -r ./requirements.txt
 
 ```bash
 psql < schema.sql
+```
+```bash
 psql < testdata.sql
 ```
 
