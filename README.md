@@ -20,6 +20,9 @@ This repository has been tested with both macOS Ventura and Cubbli Linux. Postgr
 
 ```bash
 git clone https://github.com/sippohippo/social-media-feed-experiment
+```
+
+```bash
 cd social-media-feed-experiment
 ```
 
@@ -38,7 +41,11 @@ SECRET_KEY=<secret-key-here>
 
 ```bash
 python3 -m venv venv
+```
+```bash
 source venv/bin/activate
+```
+```bash
 pip install -r ./requirements.txt
 ```
 
