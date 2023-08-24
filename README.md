@@ -2,9 +2,14 @@
 
 ## Changelog for final submissions (Lopullinen palautus 3, 3.9.2023)
 
-* Admin profiles can now remove participants
+* Admins can now remove participants
 * Bugs related to results page and calculation of accuracy are now fixed
 * CSRF vulnerability has been removed
+
+
+## Short description
+
+This app allows running experiments where participants are shown a simulated social media feed and asked to label the profiles they see as humans or bots. A full description of the project is given in the bottom of the page.
 
 
 ## Installation, setup and testing
