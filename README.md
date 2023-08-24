@@ -1,6 +1,6 @@
 # Social Media Feed Experiment Web App
 
-## Changelog for final submissions (Lopullinen palautus 3, 3.9.2023)
+## Changelog for final submissions (Lopullinen palautus, 3.9.2023)
 
 * Admins can now remove participants
 * Bugs related to results page and calculation of accuracy are now fixed
