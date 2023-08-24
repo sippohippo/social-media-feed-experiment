@@ -64,10 +64,12 @@ def experiment():
     if not usertools.terms_accepted(user):
         return redirect("/terms")
     votes = []
+
     if request.method == "GET":
         global profiles
         profiles = experimenttools.select_posts(3)
         return render_template("experiment.html", profiles=profiles)
+
     if request.method == "POST":
         for i in range(1, len(profiles) + 1):
             vote = request.form[str(i)]
@@ -93,6 +95,27 @@ def admin():
             message="Access denied!")
 
 
+@app.route("/remove", methods=["GET", "POST"])
+def remove():
+    if session["admin"]:
+        participants = admintools.get_participants()    
+
+        if request.method == "GET":
+            return render_template("removeuser.html", participants=participants)
+
+        if request.method == "POST":
+            user = request.form["email"]
+            userId = admintools.get_id(user)
+            if userId is None:
+                return render_template("adminerror.html",
+                        message="Please enter a valid email from the list!")
+
+            admintools.remove_user(userId[0])
+            return redirect("/admin")            
+    return render_template("invalid.html",
+            message="Access denied!")
+
+
 @app.route("/logout")
 def logout():
     del session["email"]
@@ -113,6 +136,7 @@ def show(image_id):
 def terms():
     if request.method == "GET":
         return render_template("terms.html")
+
     if request.method == "POST":
         response = request.form["response"]
         if response == "1":

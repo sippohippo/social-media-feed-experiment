@@ -37,9 +37,34 @@ def average_accuracy():
     return accuracy    
 
 
-def add_post():
-    pass
-
-
 def remove_user(userId):
-    pass
+    query = text("""
+            DELETE FROM votes
+            WHERE userId=:userId
+            """)
+    db.session.execute(query, {"userId":userId})
+    
+    query = text("""
+            DELETE FROM results
+            WHERE userId=:userId
+            """)
+    db.session.execute(query, {"userId":userId})
+
+    query = text("""
+            DELETE FROM users
+            WHERE id=:userId
+            """)
+    db.session.execute(query, {"userId":userId})
+
+    db.session.commit()
+    
+
+def get_id(email):
+    query = text("""
+            SELECT id
+            FROM users
+            WHERE email=:email
+            """)
+    result = db.session.execute(query, {"email":email})
+    userId = result.fetchone()
+    return userId
